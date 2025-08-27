@@ -1,0 +1,117 @@
+.profit-display {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8));
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.profit-header {
+    margin-bottom: 16px;
+}
+
+.profit-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f8fafc;
+    margin: 0;
+    letter-spacing: -0.025em;
+}
+
+.profit-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.profit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.profit-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profit-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    line-height: 1.2;
+}
+
+.profit-description {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    line-height: 1.2;
+}
+
+.profit-value-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profit-value {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+    letter-spacing: 0.025em;
+}
+
+.profit-value.positive {
+    color: #10b981;
+}
+
+.profit-value.negative {
+    color: #ef4444;
+}
+
+.profit-indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.profit-indicator.positive {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.profit-indicator.negative {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+@media (max-width: 768px) {
+    .profit-display {
+        padding: 16px;
+        margin-bottom: 20px;
+    }
+
+    .profit-item {
+        padding: 10px 0;
+    }
+
+    .profit-value {
+        font-size: 0.875rem;
+    }
+
+    .profit-indicator {
+        width: 20px;
+        height: 20px;
+        font-size: 0.75rem;
+    }
+}

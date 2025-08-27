@@ -1,0 +1,293 @@
+.chart-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    background: rgba(30, 41, 59, 0.95);
+    border-radius: 24px;
+    box-shadow:
+            0 25px 50px -12px rgba(0, 0, 0, 0.25),
+            0 0 0 1px rgba(148, 163, 184, 0.05),
+            inset 0 1px 0 rgba(148, 163, 184, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+    box-shadow:
+            0 32px 64px -12px rgba(0, 0, 0, 0.35),
+            0 0 0 1px rgba(148, 163, 184, 0.1),
+            inset 0 1px 0 rgba(148, 163, 184, 0.15);
+    transform: translateY(-2px);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+}
+
+.chart-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f8fafc;
+    margin: 0;
+    letter-spacing: -0.025em;
+}
+
+.chart-indicators {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.indicator {
+    padding: 6px 16px;
+    background: rgba(148, 163, 184, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #94a3b8;
+    transition: all 0.2s ease;
+}
+
+.indicator.active {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-color: #3b82f6;
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.chart-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    padding: 40px;
+}
+
+.loading-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(148, 163, 184, 0.2);
+    border-top: 3px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #f8fafc;
+    margin: 0;
+}
+
+.loading-subtext {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.error-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.error-icon {
+    font-size: 3rem;
+    color: #ef4444;
+    margin-bottom: 8px;
+}
+
+.error-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #f8fafc;
+    margin: 0;
+}
+
+.error-subtext {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.charts-grid {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.main-chart {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(30, 41, 59, 0.6));
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.indicator-chart {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.4), rgba(30, 41, 59, 0.4));
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.08);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.chart-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.apexcharts-tooltip {
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    color: white;
+    border-radius: 12px !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+.apexcharts-tooltip-title {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    border-radius: 8px 8px 0 0 !important;
+    font-weight: 600 !important;
+}
+
+.apexcharts-canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Force ApexCharts to respect container width */
+.main-chart .apexcharts-canvas,
+.indicator-chart .apexcharts-canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Additional constraint for the root ApexCharts wrapper */
+.main-chart > div,
+.indicator-chart > div {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Ensure all ApexCharts SVG elements respect boundaries */
+.main-chart svg,
+.indicator-chart svg {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Ensure ApexCharts container respects parent width */
+.main-chart .apexcharts-canvas,
+.indicator-chart .apexcharts-canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Additional constraint for the root ApexCharts wrapper */
+.main-chart > div,
+.indicator-chart > div {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        margin: 0 0 24px 0;
+        border-radius: 16px;
+    }
+
+    .chart-header {
+        padding: 20px 24px;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .chart-title {
+        font-size: 1.25rem;
+    }
+
+    .charts-grid {
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .main-chart,
+    .indicator-chart {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .charts-grid {
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .main-chart,
+    .indicator-chart {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .charts-grid {
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .main-chart,
+    .indicator-chart {
+        padding: 12px;
+    }
+}
